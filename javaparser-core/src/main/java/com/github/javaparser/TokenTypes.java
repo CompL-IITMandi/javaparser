@@ -170,6 +170,9 @@ public class TokenTypes {
             case EXPORTS:
             case PROVIDES:
             case TRANSITIVE:
+            /** Added by Arjun. To include value declaration for classes. */
+            case PRIMITIVE_TYPE:
+            case VALUE_TYPE:
                 return JavaToken.Category.KEYWORD;
             case LONG_LITERAL:
             case INTEGER_LITERAL:

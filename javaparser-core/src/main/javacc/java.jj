@@ -363,6 +363,9 @@ TOKEN :
 | < EXPORTS: "exports" >
 | < PROVIDES: "provides" >
 | < TRANSITIVE: "transitive" >
+/** Added by Arjun. To include primitive and value declaration for classes. */
+| < PRIMITIVE_TYPE: "primitive" >
+| < VALUE_TYPE: "value" >
 }
 
 /* LITERALS */
@@ -1270,6 +1273,11 @@ ModifierHolder Modifiers():
             "transitive" { add(modifiers, new Modifier(tokenRange(), Modifier.Keyword.TRANSITIVE));  begin = orIfInvalid(begin, token()); }
          |
             "default" { add(modifiers, new Modifier(tokenRange(), Modifier.Keyword.DEFAULT));  begin = orIfInvalid(begin, token()); }
+         |
+         /** Added by Arjun. To include primitive and value declaration for classes. */
+            "primitive" { add(modifiers, new Modifier(tokenRange(), Modifier.Keyword.PRIMITIVE_TYPE));  begin = orIfInvalid(begin, token()); }
+         |
+            "value" { add(modifiers, new Modifier(tokenRange(), Modifier.Keyword.VALUE_TYPE));  begin = orIfInvalid(begin, token()); }
          |
              ann = Annotation() { annotations = add(annotations, ann); begin = orIfInvalid(begin, ann); }
         )
@@ -2935,8 +2943,8 @@ String Identifier():
         // TODO: Explain how / where boolean and null literals are excluded.
         // Make sure the module info keywords don't interfere with normal Java parsing by matching them as normal identifiers.
         <MODULE> | <REQUIRES> | <TO> | <WITH> | <OPEN> | <OPENS> | <USES> | <EXPORTS> | <PROVIDES> | <TRANSITIVE> |
-        // Make sure older Java versions parse
-        <ENUM> | <STRICTFP> | <YIELD> | <RECORD> |
+        // Make sure older Java versions parse. Added PRIMITIVE_TYPE and VALUE_TYPE by Arjun. To provide backward compatibility.
+        <ENUM> | <STRICTFP> | <YIELD> | <RECORD> | <PRIMITIVE_TYPE> | <VALUE_TYPE> |
         // An actual plain old identifier
         <IDENTIFIER>
     ) { ret = token.image; setTokenKind(IDENTIFIER);}

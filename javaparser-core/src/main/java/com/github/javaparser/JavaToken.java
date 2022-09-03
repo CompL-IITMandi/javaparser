@@ -23,10 +23,8 @@ package com.github.javaparser;
 import static com.github.javaparser.utils.CodeGenerationUtils.f;
 import static com.github.javaparser.utils.Utils.SYSTEM_EOL;
 import static com.github.javaparser.utils.Utils.assertNotNull;
-
 import java.util.List;
 import java.util.Optional;
-
 import com.github.javaparser.ast.Generated;
 
 /**
@@ -333,78 +331,80 @@ public class JavaToken {
         EXPORTS(73),
         PROVIDES(74),
         TRANSITIVE(75),
-        LONG_LITERAL(76),
-        INTEGER_LITERAL(77),
-        DECIMAL_LITERAL(78),
-        HEX_LITERAL(79),
-        OCTAL_LITERAL(80),
-        BINARY_LITERAL(81),
-        FLOATING_POINT_LITERAL(82),
-        DECIMAL_FLOATING_POINT_LITERAL(83),
-        DECIMAL_EXPONENT(84),
-        HEXADECIMAL_FLOATING_POINT_LITERAL(85),
-        HEXADECIMAL_EXPONENT(86),
-        HEX_DIGITS(87),
-        UNICODE_ESCAPE(88),
-        CHARACTER_LITERAL(89),
-        STRING_LITERAL(90),
-        ENTER_TEXT_BLOCK(91),
-        TEXT_BLOCK_LITERAL(92),
-        TEXT_BLOCK_CONTENT(93),
-        IDENTIFIER(94),
-        LETTER(95),
-        PART_LETTER(96),
-        LPAREN(97),
-        RPAREN(98),
-        LBRACE(99),
-        RBRACE(100),
-        LBRACKET(101),
-        RBRACKET(102),
-        SEMICOLON(103),
-        COMMA(104),
-        DOT(105),
-        ELLIPSIS(106),
-        AT(107),
-        DOUBLECOLON(108),
-        ASSIGN(109),
-        LT(110),
-        BANG(111),
-        TILDE(112),
-        HOOK(113),
-        COLON(114),
-        ARROW(115),
-        EQ(116),
-        GE(117),
-        LE(118),
-        NE(119),
-        SC_AND(120),
-        SC_OR(121),
-        INCR(122),
-        DECR(123),
-        PLUS(124),
-        MINUS(125),
-        STAR(126),
-        SLASH(127),
-        BIT_AND(128),
-        BIT_OR(129),
-        XOR(130),
-        REM(131),
-        LSHIFT(132),
-        PLUSASSIGN(133),
-        MINUSASSIGN(134),
-        STARASSIGN(135),
-        SLASHASSIGN(136),
-        ANDASSIGN(137),
-        ORASSIGN(138),
-        XORASSIGN(139),
-        REMASSIGN(140),
-        LSHIFTASSIGN(141),
-        RSIGNEDSHIFTASSIGN(142),
-        RUNSIGNEDSHIFTASSIGN(143),
-        RUNSIGNEDSHIFT(144),
-        RSIGNEDSHIFT(145),
-        GT(146),
-        CTRL_Z(147);
+        PRIMITIVE_TYPE(76),
+        VALUE_TYPE(77),
+        LONG_LITERAL(78),
+        INTEGER_LITERAL(79),
+        DECIMAL_LITERAL(80),
+        HEX_LITERAL(81),
+        OCTAL_LITERAL(82),
+        BINARY_LITERAL(83),
+        FLOATING_POINT_LITERAL(84),
+        DECIMAL_FLOATING_POINT_LITERAL(85),
+        DECIMAL_EXPONENT(86),
+        HEXADECIMAL_FLOATING_POINT_LITERAL(87),
+        HEXADECIMAL_EXPONENT(88),
+        HEX_DIGITS(89),
+        UNICODE_ESCAPE(90),
+        CHARACTER_LITERAL(91),
+        STRING_LITERAL(92),
+        ENTER_TEXT_BLOCK(93),
+        TEXT_BLOCK_LITERAL(94),
+        TEXT_BLOCK_CONTENT(95),
+        IDENTIFIER(96),
+        LETTER(97),
+        PART_LETTER(98),
+        LPAREN(99),
+        RPAREN(100),
+        LBRACE(101),
+        RBRACE(102),
+        LBRACKET(103),
+        RBRACKET(104),
+        SEMICOLON(105),
+        COMMA(106),
+        DOT(107),
+        ELLIPSIS(108),
+        AT(109),
+        DOUBLECOLON(110),
+        ASSIGN(111),
+        LT(112),
+        BANG(113),
+        TILDE(114),
+        HOOK(115),
+        COLON(116),
+        ARROW(117),
+        EQ(118),
+        GE(119),
+        LE(120),
+        NE(121),
+        SC_AND(122),
+        SC_OR(123),
+        INCR(124),
+        DECR(125),
+        PLUS(126),
+        MINUS(127),
+        STAR(128),
+        SLASH(129),
+        BIT_AND(130),
+        BIT_OR(131),
+        XOR(132),
+        REM(133),
+        LSHIFT(134),
+        PLUSASSIGN(135),
+        MINUSASSIGN(136),
+        STARASSIGN(137),
+        SLASHASSIGN(138),
+        ANDASSIGN(139),
+        ORASSIGN(140),
+        XORASSIGN(141),
+        REMASSIGN(142),
+        LSHIFTASSIGN(143),
+        RSIGNEDSHIFTASSIGN(144),
+        RUNSIGNEDSHIFTASSIGN(145),
+        RUNSIGNEDSHIFT(146),
+        RSIGNEDSHIFT(147),
+        GT(148),
+        CTRL_Z(149);
 
         private final int kind;
 
@@ -414,150 +414,154 @@ public class JavaToken {
 
         public static Kind valueOf(int kind) {
             switch(kind) {
-                case 147:
+                case 149:
                     return CTRL_Z;
-                case 146:
+                case 148:
                     return GT;
-                case 145:
+                case 147:
                     return RSIGNEDSHIFT;
-                case 144:
+                case 146:
                     return RUNSIGNEDSHIFT;
-                case 143:
+                case 145:
                     return RUNSIGNEDSHIFTASSIGN;
-                case 142:
+                case 144:
                     return RSIGNEDSHIFTASSIGN;
-                case 141:
+                case 143:
                     return LSHIFTASSIGN;
-                case 140:
+                case 142:
                     return REMASSIGN;
-                case 139:
+                case 141:
                     return XORASSIGN;
-                case 138:
+                case 140:
                     return ORASSIGN;
-                case 137:
+                case 139:
                     return ANDASSIGN;
-                case 136:
+                case 138:
                     return SLASHASSIGN;
-                case 135:
+                case 137:
                     return STARASSIGN;
-                case 134:
+                case 136:
                     return MINUSASSIGN;
-                case 133:
+                case 135:
                     return PLUSASSIGN;
-                case 132:
+                case 134:
                     return LSHIFT;
-                case 131:
+                case 133:
                     return REM;
-                case 130:
+                case 132:
                     return XOR;
-                case 129:
+                case 131:
                     return BIT_OR;
-                case 128:
+                case 130:
                     return BIT_AND;
-                case 127:
+                case 129:
                     return SLASH;
-                case 126:
+                case 128:
                     return STAR;
-                case 125:
+                case 127:
                     return MINUS;
-                case 124:
+                case 126:
                     return PLUS;
-                case 123:
+                case 125:
                     return DECR;
-                case 122:
+                case 124:
                     return INCR;
-                case 121:
+                case 123:
                     return SC_OR;
-                case 120:
+                case 122:
                     return SC_AND;
-                case 119:
+                case 121:
                     return NE;
-                case 118:
+                case 120:
                     return LE;
-                case 117:
+                case 119:
                     return GE;
-                case 116:
+                case 118:
                     return EQ;
-                case 115:
+                case 117:
                     return ARROW;
-                case 114:
+                case 116:
                     return COLON;
-                case 113:
+                case 115:
                     return HOOK;
-                case 112:
+                case 114:
                     return TILDE;
-                case 111:
+                case 113:
                     return BANG;
-                case 110:
+                case 112:
                     return LT;
-                case 109:
+                case 111:
                     return ASSIGN;
-                case 108:
+                case 110:
                     return DOUBLECOLON;
-                case 107:
+                case 109:
                     return AT;
-                case 106:
+                case 108:
                     return ELLIPSIS;
-                case 105:
+                case 107:
                     return DOT;
-                case 104:
+                case 106:
                     return COMMA;
-                case 103:
+                case 105:
                     return SEMICOLON;
-                case 102:
+                case 104:
                     return RBRACKET;
-                case 101:
+                case 103:
                     return LBRACKET;
-                case 100:
+                case 102:
                     return RBRACE;
-                case 99:
+                case 101:
                     return LBRACE;
-                case 98:
+                case 100:
                     return RPAREN;
-                case 97:
+                case 99:
                     return LPAREN;
-                case 96:
+                case 98:
                     return PART_LETTER;
-                case 95:
+                case 97:
                     return LETTER;
-                case 94:
+                case 96:
                     return IDENTIFIER;
-                case 93:
+                case 95:
                     return TEXT_BLOCK_CONTENT;
-                case 92:
+                case 94:
                     return TEXT_BLOCK_LITERAL;
-                case 91:
+                case 93:
                     return ENTER_TEXT_BLOCK;
-                case 90:
+                case 92:
                     return STRING_LITERAL;
-                case 89:
+                case 91:
                     return CHARACTER_LITERAL;
-                case 88:
+                case 90:
                     return UNICODE_ESCAPE;
-                case 87:
+                case 89:
                     return HEX_DIGITS;
-                case 86:
+                case 88:
                     return HEXADECIMAL_EXPONENT;
-                case 85:
+                case 87:
                     return HEXADECIMAL_FLOATING_POINT_LITERAL;
-                case 84:
+                case 86:
                     return DECIMAL_EXPONENT;
-                case 83:
+                case 85:
                     return DECIMAL_FLOATING_POINT_LITERAL;
-                case 82:
+                case 84:
                     return FLOATING_POINT_LITERAL;
-                case 81:
+                case 83:
                     return BINARY_LITERAL;
-                case 80:
+                case 82:
                     return OCTAL_LITERAL;
-                case 79:
+                case 81:
                     return HEX_LITERAL;
-                case 78:
+                case 80:
                     return DECIMAL_LITERAL;
-                case 77:
+                case 79:
                     return INTEGER_LITERAL;
-                case 76:
+                case 78:
                     return LONG_LITERAL;
+                case 77:
+                    return VALUE_TYPE;
+                case 76:
+                    return PRIMITIVE_TYPE;
                 case 75:
                     return TRANSITIVE;
                 case 74:

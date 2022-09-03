@@ -85,6 +85,20 @@ public class Modifier extends Node {
     }
 
     /**
+     * Added by Arjun. To include primitive declaration for classes.
+     */
+    public static Modifier primitiveTypeModifier() {
+        return new Modifier(Keyword.PRIMITIVE_TYPE);
+    }
+
+    /**
+     * Added by Arjun. To include value declaration for classes.
+     */
+    public static Modifier valueTypeModifier() {
+        return new Modifier(Keyword.VALUE_TYPE);
+    }
+
+    /**
      * The Java modifier keywords.
      */
     public enum Keyword {
@@ -101,7 +115,12 @@ public class Modifier extends Node {
         SYNCHRONIZED("synchronized"),
         NATIVE("native"),
         STRICTFP("strictfp"),
-        TRANSITIVE("transitive");
+        TRANSITIVE("transitive"),
+        /**
+         * Added by Arjun. To include primitive and value declaration for classes.
+         */
+        VALUE_TYPE("value"),
+        PRIMITIVE_TYPE("primitive");
 
         private final String codeRepresentation;
 
